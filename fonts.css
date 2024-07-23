@@ -1,0 +1,36 @@
+/* TBCXRegular ფონტის რეგულაცია */
+@font-face {
+  font-family: "TBCXRegular";
+  src: url("Fonts/TBCXRegular.dee156cc.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* TBCXMedium ფონტის რეგულაცია */
+@font-face {
+  font-family: "TBCXMedium";
+  src: url("Fonts/TBCXMedium.8ef1248a.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* TBCXBold ფონტის რეგულაცია */
+@font-face {
+  font-family: "TBCXBold";
+  src: url("Fonts/TBCXBold.6db5e61d.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  font-family: "TBCXRegular", sans-serif;
+  font-size: 16px;
+}
+
+h1 {
+  font-family: "TBCXMedium", sans-serif;
+}
+
+strong {
+  font-family: "TBCXBold", sans-serif;
+}

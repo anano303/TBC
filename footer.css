@@ -1,0 +1,98 @@
+/* Basic styling for footer and sections */
+footer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.footerHead {
+  padding-right: 100px;
+}
+
+.desktop-sections {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 35px;
+  padding-right: 180px;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 10px;
+}
+
+.footer-section h1 {
+  cursor: pointer;
+}
+
+.contact-info {
+  margin-top: 11px;
+}
+
+.gap-column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.footer-section3 {
+  padding: 30px 150px 30px 0px;
+}
+.last-div {
+  display: flex;
+  gap: 20px;
+}
+
+.line {
+  width: 120%;
+  background-color: #e4e2e2;
+  height: 1px;
+  margin-left: -150px;
+  margin-top: 40px;
+}
+select {
+  border: none; /* Remove the border */
+  outline: none; /* Remove the focus outline */
+  background: none; /* Remove default background */
+  appearance: none; /* Remove default styling (borders, arrows) */
+}
+
+/* Hide mobile select and show desktop sections on large screens */
+@media (min-width: 769px) {
+  .mobile-select {
+    display: none;
+  }
+
+  .desktop-sections {
+    display: flex;
+  }
+
+  .footer-section {
+    display: flex; /* Ensure all sections are displayed */
+  }
+}
+
+/* Hide desktop sections and show mobile select on small screens */
+@media (max-width: 768px) {
+  .mobile-select {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .desktop-sections {
+    display: none;
+  }
+
+  .footer-section {
+    display: none;
+  }
+
+  .footer-section p {
+    display: none;
+  }
+
+  /* Show paragraphs when h1 is clicked */
+  .footer-section.active p {
+    display: block; /* Show paragraphs when the section is active */
+  }
+}

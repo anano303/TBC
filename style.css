@@ -1,0 +1,495 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px 150px;
+  background-color: #f9fafa;
+  color: #555f62;
+  overflow-x: hidden;
+}
+header {
+  background: white;
+  margin: 0;
+  position: fixed;
+  min-width: 100vw;
+  left: 0;
+  padding: 20px 150px;
+  z-index: 999;
+}
+
+header,
+nav ul,
+.header-right {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+.mobileLogo {
+  display: none;
+}
+.deskLogo {
+  width: 10vw;
+  cursor: pointer;
+}
+
+.search-icon svg {
+  transition: fill 0.3s ease, filter 0.3s ease;
+}
+
+.search-icon:hover svg {
+  filter: brightness(1.5);
+  fill: #847676;
+}
+.header-right {
+  padding-right: 12px;
+}
+/* ენის ცვლილება */
+.language-selector {
+  position: relative;
+  display: inline-block;
+}
+.language-selector .default-language {
+  cursor: pointer;
+  padding: 5px;
+}
+
+.language-selector .additional-language {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  z-index: 1;
+}
+.language-selector:hover .additional-language {
+  display: block;
+}
+.language-selector:hover {
+  padding: 4px;
+  background-color: #cfcdcd;
+}
+.language-selector .additional-language a {
+  display: block;
+  padding: 5px;
+  text-decoration: none;
+  color: black;
+}
+.language-selector .additional-language a:hover {
+  background-color: #f1f1f1;
+}
+#language-switch {
+  text-align: right;
+}
+.subscribe-link {
+  color: #182cc0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.subscribe-link:hover {
+  color: #3295ce;
+}
+main {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.banner {
+  position: relative;
+}
+.banner img {
+  border-radius: 6px;
+  max-height: 360px;
+  object-fit: cover;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(1px);
+  border-radius: 6px;
+  z-index: 1;
+}
+.text button {
+  background-image: linear-gradient(15deg, #001682, #3240e5);
+  border-radius: 4px;
+  color: #fff;
+  padding: 16px 24px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.33;
+  border: none;
+  max-width: 150px;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  color: #fff;
+  top: 20%;
+  left: 8%;
+  gap: 7vh;
+  max-width: 540px;
+  z-index: 2;
+}
+.text button:hover {
+  background-image: none;
+  background-color: #3295ce;
+  cursor: pointer;
+}
+.container {
+  padding: 10px 0;
+  display: flex;
+  row-gap: 30px;
+  column-gap: 30px;
+  width: 80vw;
+  max-height: 600px; /* Adjust this value to control the container's height */
+  overflow: hidden; /* Ensure any overflow is hidden */
+}
+
+.sec1 {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 55%;
+  max-height: 600px; /* Ensure sec1 doesn't exceed the container height */
+}
+
+.sec2 {
+  width: 45%;
+  display: flex;
+  flex-direction: column; /* Arrange items in a column */
+  justify-content: space-between; /* Distribute space evenly */
+  max-height: 600px; /* Ensure sec2 doesn't exceed the container height */
+}
+
+.img1,
+.img2 {
+  position: relative;
+  border-radius: 8px;
+  flex: 1;
+  display: flex;
+  max-height: 100%;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.img1 {
+  height: 50%;
+}
+
+.img1 img,
+.img2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.img1:hover img,
+.img2:hover img {
+  transform: scale(1.2);
+  transform-origin: center;
+}
+
+.text2 {
+  top: 50%;
+  gap: 2vh;
+}
+
+.text3 {
+  top: 70%;
+}
+
+.text2 a,
+.text3 a {
+  color: white;
+  margin: 1px;
+  text-decoration: underline;
+}
+
+.boxes {
+  display: flex;
+  gap: min(30px);
+  width: 100%;
+}
+.box1 {
+  background-color: white;
+  width: 33%;
+  text-align: left;
+  padding: 30px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+.box1 h1 {
+  color: black;
+}
+.boxes2 {
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  display: flex;
+  position: relative;
+  cursor: grab;
+  scrollbar-width: none;
+  overflow: -moz-scrollbars-none;
+}
+.boxes2::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for WebKit browsers */
+}
+
+.box2 {
+  position: relative;
+  border-radius: 5px;
+  border: 1px solid rgb(210, 206, 206);
+  height: 100%;
+  padding-bottom: 70px;
+  transition: background-color 0.5s ease-in-out;
+  flex: 0 0 300px; /* Adjust width as needed */
+  margin-right: 20px;
+}
+
+.box2:hover {
+  background-color: white;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.box2 .img-hover {
+  border-radius: 5px 5px 0px 0px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.box2:hover .img-hover {
+  transform: translateY(-6px);
+}
+
+.imgOver img {
+  width: 80px;
+  border-radius: 5px 0px 0px 5px;
+  position: absolute;
+  right: 0;
+  top: 20px;
+  z-index: 70;
+}
+
+.box2 p,
+.box2 h4 {
+  margin-top: 40px;
+  padding-left: 30px;
+}
+
+.box2 p {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.box2 h4 {
+  font-size: 16px;
+  color: black;
+}
+.blue-line,
+.blue-line2 {
+  height: 4px;
+  width: 40%;
+  background-color: #182cc0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.line-container,
+.line-container2 {
+  /* position: relative; */
+  height: 6px;
+  background-color: rgb(191, 189, 189);
+  margin-top: 20px;
+  width: 100%;
+  overflow: hidden;
+  cursor: grab;
+}
+
+.arrows,
+.arrows2 {
+  display: flex;
+  justify-content: right;
+}
+
+.arrows button,
+.arrows2 button {
+  background-color: transparent;
+  color: #182cc0;
+  border: none;
+  cursor: pointer;
+  margin: 0px 6px;
+  cursor: pointer;
+  font-size: 35px;
+}
+
+.arrows button:hover,
+.arrows2 button:hover {
+  color: darkblue;
+}
+
+h3 {
+  color: black;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+.flex .subscribe-link {
+  margin-right: 20px;
+}
+
+.section2,
+footer {
+  background-color: white;
+  width: 100vw;
+  margin-left: -150px;
+  padding: 20px 150px 0px 150px;
+  overflow: hidden;
+}
+.text1 {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+}
+
+.app-store {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.app-store img {
+  border: 1px solid rgb(216, 212, 212);
+  padding: 16px 32px;
+  border-radius: 5px;
+}
+.area2 img {
+  width: 300px;
+}
+
+.box3 img,
+.box3 {
+  width: 348px;
+}
+.box3 {
+  padding-bottom: 15px;
+}
+
+.box3 p {
+  font-size: 14px;
+  color: rgb(197, 192, 192);
+}
+strong {
+  color: grey;
+}
+.section5 {
+  display: flex;
+  position: relative;
+  overflow-x: scroll;
+  gap: 4vw;
+  cursor: grab;
+  scrollbar-width: none; /* Hides scrollbar in Firefox */
+  overflow: -moz-scrollbars-none;
+}
+
+.section5::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for WebKit browsers */
+}
+.section5::-moz-scrollbar {
+  display: none;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px 30px;
+  min-width: 350px;
+}
+
+.card img {
+  width: 129px;
+}
+
+.card h6 {
+  color: black;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.scroll-button {
+  position: absolute;
+  bottom: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: #2d0c89;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  z-index: 10;
+}
+
+.scroll-button.left {
+  right: 50px;
+}
+
+.scroll-button.right {
+  right: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    margin: 0 20px;
+  }
+  header {
+    margin: 0px 20px;
+  }
+  .mobileLogo {
+    display: block;
+  }
+  .deskLogo {
+    display: none;
+  }
+  .boxes {
+    flex-direction: column;
+  }
+  nav {
+    display: none;
+  }
+  .section3 {
+    overflow: scroll;
+  }
+}
