@@ -164,6 +164,7 @@ main {
   width: 80vw;
   max-height: 600px; /* Adjust this value to control the container's height */
   overflow: hidden; /* Ensure any overflow is hidden */
+  align-self: center;
 }
 
 .sec1 {
@@ -468,6 +469,11 @@ strong {
 
 .scroll-button.right {
   right: 10px;
+}
+@media screen and (max-width: 1350px) {
+  .section3 {
+    overflow: scroll;
+  }
 }
 
 @media screen and (max-width: 600px) {

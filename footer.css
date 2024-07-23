@@ -50,12 +50,6 @@ footer {
   margin-left: -150px;
   margin-top: 40px;
 }
-select {
-  border: none; /* Remove the border */
-  outline: none; /* Remove the focus outline */
-  background: none; /* Remove default background */
-  appearance: none; /* Remove default styling (borders, arrows) */
-}
 
 /* Hide mobile select and show desktop sections on large screens */
 @media (min-width: 769px) {
@@ -69,6 +63,30 @@ select {
 
   .footer-section {
     display: flex; /* Ensure all sections are displayed */
+  }
+}
+@media (min-width: 1600px) {
+  .desktop-sections {
+    padding-right: 20%;
+  }
+  .footerHead {
+    padding-right: 10%;
+  }
+}
+@media (min-width: 2000px) {
+  .desktop-sections {
+    padding-right: 20%;
+  }
+  .footerHead {
+    padding-right: 12%;
+  }
+}
+@media (min-width: 2000px) {
+  .desktop-sections {
+    padding-right: 20%;
+  }
+  .footerHead {
+    padding-right: 14%;
   }
 }
 
