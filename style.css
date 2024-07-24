@@ -427,6 +427,11 @@ strong {
 .section5::-moz-scrollbar {
   display: none;
 }
+.line-arrow {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
 
 .card {
   display: flex;
@@ -489,6 +494,9 @@ strong {
   .desktop-sections {
     display: none;
   }
+  .line-arrow {
+    display: none;
+  }
   .mobile-select {
     display: flex;
     flex-direction: column;
@@ -510,6 +518,18 @@ strong {
   .box1 {
     flex: 0 0 auto;
     width: 100%;
+  }
+  .boxes2,
+  .section5 {
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    display: flex;
+    position: relative;
+    scrollbar-width: auto;
+    -ms-overflow-style: auto;
+  }
+  .boxes2::-webkit-scrollbar {
+    display: block; /* Hide scrollbar for WebKit browsers */
   }
   .container {
     display: flex;

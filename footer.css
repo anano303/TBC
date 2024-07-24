@@ -4,11 +4,10 @@ footer {
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 30px 150px;
   background-color: white;
 }
 .footerHead {
-  padding-right: 87px;
+  padding: 30px 150px;
 }
 
 .desktop-sections {
@@ -21,6 +20,10 @@ footer {
 .footer-section {
   flex: 1;
   margin: 10px;
+}
+
+.footer-sec2 {
+  padding: 30px 150px;
 }
 
 .footer-section h1 {
@@ -38,7 +41,7 @@ footer {
 }
 
 .footer-section3 {
-  padding: 30px 87px 30px 0px;
+  padding: 30px 150px;
 }
 .last-div {
   display: flex;
@@ -46,10 +49,8 @@ footer {
 }
 
 .line {
-  width: 120%;
   background-color: #e4e2e2;
   height: 1px;
-  margin-left: -150px;
   margin-top: 40px;
 }
 
