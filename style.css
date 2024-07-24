@@ -508,10 +508,10 @@ strong {
     left: 0;
   }
   .banner1 {
-    bottom: 15%;
+    bottom: 7%;
   }
   .margin-top {
-    margin-top: 80%;
+    margin-top: 50%;
   }
   /* .margin-bottom {
     margin-bottom: 80%;
@@ -632,7 +632,7 @@ strong {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
   header {
     padding: 20px;
   }
@@ -672,6 +672,12 @@ strong {
     left: 5%;
     max-width: 90%;
     top: 40%;
+  }
+  .banner1 {
+    bottom: 15%;
+  }
+  .margin-top {
+    margin-top: 80%;
   }
   .banner1 .text {
     top: 30%;
@@ -734,6 +740,12 @@ strong {
   .margin-top {
     margin-top: 140%;
     font-size: 18px;
+  }
+}
+
+@media screen and (min-height: 500px) {
+  .banner1 {
+    bottom: 18%;
   }
 }
 @media screen and (min-height: 650px) {
