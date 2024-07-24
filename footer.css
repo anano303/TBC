@@ -1,13 +1,11 @@
-/* Basic styling for footer and sections */
-/* Basic styling for footer and sections */
 footer {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
   background-color: white;
-  width: 100%; /* Ensure the footer takes full width */
-  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  width: 100%;
+  box-sizing: border-box;
   overflow-x: hidden;
 }
 .footerHead {
@@ -64,7 +62,7 @@ footer {
 }
 
 .logo.rotate {
-  transform: rotate(-90deg); /* Rotate by 90 degrees for the > character */
+  transform: rotate(-90deg);
   transition: transform 0.3s ease-in-out;
 }
 
@@ -127,7 +125,7 @@ footer {
   }
 
   .footer-section {
-    display: flex; /* Ensure all sections are displayed */
+    display: flex;
   }
 }
 
@@ -145,7 +143,7 @@ footer {
     padding-right: 20%;
   }
   .footerHead {
-    padding-right: 14%; /* Adjusted to 14% */
+    padding-right: 14%;
   }
 }
 
@@ -158,10 +156,9 @@ footer {
   .mobile-select {
     display: flex;
     flex-direction: column;
-    width: 100%; /* Ensure it takes full width */
-    box-sizing: border-box; /* Include padding and border in width */
+    width: 100%;
+    box-sizing: border-box;
   }
-
   .desktop-sections {
     display: none;
   }
@@ -176,7 +173,7 @@ footer {
 
   /* Show paragraphs when h1 is clicked */
   .footer-section.active p {
-    display: block; /* Show paragraphs when the section is active */
+    display: block;
   }
   .footer-section3 {
     font-size: 12px;

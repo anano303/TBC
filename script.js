@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
     mobileNavbar.style.display = "block";
     setTimeout(() => {
       mobileNavbar.style.opacity = 1;
-    }, 10); // Small delay to ensure transition works
+    }, 10);
   });
 
   closeImg.addEventListener("click", () => {
@@ -160,6 +160,6 @@ document.addEventListener("DOMContentLoaded", () => {
     mobileNavbar.style.opacity = 0;
     setTimeout(() => {
       mobileNavbar.style.display = "none";
-    }, 300); // Match this to the transition duration in CSS
+    }, 300);
   });
 });

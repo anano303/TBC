@@ -599,6 +599,11 @@ strong {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    padding: 20px 0px;
+  }
+  .mobile-section h3,
+  .mobile-section p {
+    padding: 20px;
   }
   .mobile-section button {
     color: #182cc0;
@@ -613,6 +618,7 @@ strong {
     line-height: 1.33;
     text-decoration: none;
     transition: background-position 0.25s ease-in-out;
+    margin: 20px;
   }
   .mobile-section button:hover {
     border: none;
@@ -688,6 +694,9 @@ strong {
   .text2 h1,
   .text2 span {
     font-size: 16px;
+  }
+  .text2 h2 {
+    font-size: 20px;
   }
   .text button {
     /* max-width: 300px; */
