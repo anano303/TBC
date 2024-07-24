@@ -482,7 +482,7 @@ strong {
   display: none;
 }
 .section-desktop {
-  display: block;
+  display: flex;
 }
 .mobileBar {
   display: none;
@@ -499,7 +499,28 @@ strong {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1180px) {
+  header {
+    padding: 20px 40px;
+  }
+  nav,
+  .subscribe-link,
+  .header-right {
+    font-size: 13px;
+  }
+  .header-right {
+    padding-right: 0px;
+  }
+  main {
+    margin: 0px 40px;
+  }
+  .section2 {
+    margin-left: -40px;
+    padding: 20px 40px 0px 40px;
+  }
+}
+
+@media screen and (max-width: 820px) {
   body {
     overflow-x: hidden;
   }
@@ -675,6 +696,9 @@ strong {
   .card,
   .box2 {
     margin-bottom: 30px;
+  }
+  .boxx2 {
+    height: 368px;
   }
   .sec1 {
     flex-direction: row;
