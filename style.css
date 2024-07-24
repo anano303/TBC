@@ -54,7 +54,8 @@ a {
   padding-right: 12px;
 }
 /* ენის ცვლილება */
-.language-selector {
+.language-selector,
+.lang1 {
   position: relative;
   display: inline-block;
 }
@@ -531,7 +532,7 @@ strong {
     display: none;
     opacity: 0;
     position: fixed;
-    top: 13%;
+    top: 10%;
     left: 0;
     width: 100%;
     height: 100%;
@@ -574,7 +575,7 @@ strong {
     width: 16px;
     height: 16px;
   }
-  .language-selector {
+  .lang1 {
     display: none;
   }
   .banner {
