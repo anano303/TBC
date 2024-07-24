@@ -134,17 +134,32 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// const questions = document.querySelectorAll(".name");
+// navbar on mobile version
 
-// questions.forEach((question) =>
-//   question.addEventListener("click", () => {
-//     if (question.parentNode.classList.contains("active")) {
-//       question.parentNode.classList.toggle("active");
-//     } else {
-//       questions.forEach((question) =>
-//         question.parentNode.classList.remove("active")
-//       );
-//       question.parentNode.classList.add("active");
-//     }
-//   })
-// );
+document.addEventListener("DOMContentLoaded", () => {
+  const openImg = document.querySelector(".mobileBar .open");
+  const closeImg = document.querySelector(".mobileBar .close");
+  const mobileNavbar = document.querySelector(".mobileNavbar");
+
+  openImg.addEventListener("click", () => {
+    openImg.style.opacity = 0;
+    openImg.style.pointerEvents = "none";
+    closeImg.style.opacity = 1;
+    closeImg.style.pointerEvents = "auto";
+    mobileNavbar.style.display = "block";
+    setTimeout(() => {
+      mobileNavbar.style.opacity = 1;
+    }, 10); // Small delay to ensure transition works
+  });
+
+  closeImg.addEventListener("click", () => {
+    closeImg.style.opacity = 0;
+    closeImg.style.pointerEvents = "none";
+    openImg.style.opacity = 1;
+    openImg.style.pointerEvents = "auto";
+    mobileNavbar.style.opacity = 0;
+    setTimeout(() => {
+      mobileNavbar.style.display = "none";
+    }, 300); // Match this to the transition duration in CSS
+  });
+});
