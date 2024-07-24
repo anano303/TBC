@@ -496,6 +496,19 @@ strong {
   header {
     padding: 20px;
   }
+  .banner {
+    position: absolute;
+    left: 0;
+  }
+  .banner1 {
+    bottom: 15%;
+  }
+  .margin-top {
+    margin-top: 80%;
+  }
+  /* .margin-bottom {
+    margin-bottom: 80%;
+  } */
   .banner img {
     min-height: 230px;
   }
