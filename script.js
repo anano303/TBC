@@ -8,6 +8,7 @@ document
     defaultLanguage.textContent = additionalLanguage.textContent;
     additionalLanguage.textContent = temp;
   });
+
 function setupScrollableSection(
   containerSelector,
   lineSelector,
@@ -36,7 +37,10 @@ function setupScrollableSection(
 
   function handleScroll(percentage) {
     const scrollAmount = maxScrollLeft * (percentage / 100);
-    container.scrollLeft += scrollAmount;
+    container.scrollBy({
+      left: scrollAmount,
+      behavior: "smooth",
+    });
     updateLine();
   }
 
@@ -68,25 +72,29 @@ function setupScrollableSection(
     document.addEventListener("mouseup", onMouseUp);
   });
 
-  // Use percentage values for scrolling
-  prevButton.addEventListener("click", () => handleScroll(-movePercentage)); // Move left by specified percentage
-  nextButton.addEventListener("click", () => handleScroll(movePercentage)); // Move right by specified percentage
+  prevButton.addEventListener("click", () => handleScroll(-movePercentage));
+  nextButton.addEventListener("click", () => handleScroll(movePercentage));
 
   container.addEventListener("mousedown", (e) => {
     if (e.button === 0) {
+      isDragging = true;
       startX = e.pageX;
       startScrollLeft = container.scrollLeft;
       function onMouseMove(e) {
+        if (!isDragging) return;
         container.scrollLeft = startScrollLeft - (e.pageX - startX);
         updateLine();
       }
       document.addEventListener("mousemove", onMouseMove);
-      document.addEventListener("mouseup", onMouseUp);
+      document.addEventListener("mouseup", () => {
+        isDragging = false;
+        document.removeEventListener("mousemove", onMouseMove);
+      });
     }
   });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  setupScrollableSection(".boxes2", ".blue-line", ".prev", ".next", 35); // 35% movement for blue-line
-  setupScrollableSection(".section5", ".blue-line2", ".prev2", ".next2", 100); // 100% movement for blue-line2
+  setupScrollableSection(".boxes2", ".blue-line", ".prev", ".next", 35);
+  setupScrollableSection(".section5", ".blue-line2", ".prev2", ".next2", 100);
 });

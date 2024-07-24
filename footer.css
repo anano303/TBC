@@ -4,9 +4,11 @@ footer {
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding: 30px 150px;
+  background-color: white;
 }
 .footerHead {
-  padding-right: 100px;
+  padding-right: 87px;
 }
 
 .desktop-sections {
@@ -36,7 +38,7 @@ footer {
 }
 
 .footer-section3 {
-  padding: 30px 150px 30px 0px;
+  padding: 30px 87px 30px 0px;
 }
 .last-div {
   display: flex;
@@ -92,6 +94,10 @@ footer {
 
 /* Hide desktop sections and show mobile select on small screens */
 @media (max-width: 768px) {
+  footer {
+    padding: 20px;
+  }
+
   .mobile-select {
     display: flex;
     flex-direction: column;
@@ -112,5 +118,8 @@ footer {
   /* Show paragraphs when h1 is clicked */
   .footer-section.active p {
     display: block; /* Show paragraphs when the section is active */
+  }
+  .footerHead {
+    padding-right: 0px;
   }
 }

@@ -5,7 +5,6 @@
 }
 
 body {
-  margin: 0px 150px;
   background-color: #f9fafa;
   color: #555f62;
   overflow-x: hidden;
@@ -34,6 +33,8 @@ a {
   color: #333;
 }
 .mobileLogo {
+  width: 44px;
+  height: 40px;
   display: none;
 }
 .deskLogo {
@@ -101,6 +102,7 @@ a {
   color: #3295ce;
 }
 main {
+  margin: 0px 150px;
   padding-top: 100px;
   display: flex;
   flex-direction: column;
@@ -254,7 +256,6 @@ main {
   scroll-behavior: smooth;
   display: flex;
   position: relative;
-  cursor: grab;
   scrollbar-width: none;
   overflow: -moz-scrollbars-none;
 }
@@ -269,10 +270,13 @@ main {
   height: 100%;
   padding-bottom: 70px;
   transition: background-color 0.5s ease-in-out;
-  flex: 0 0 300px; /* Adjust width as needed */
+  flex: 0 0 300px;
   margin-right: 20px;
 }
-
+.box2 .img-hover {
+  position: relative;
+  width: 100%;
+}
 .box2:hover {
   background-color: white;
   cursor: pointer;
@@ -288,7 +292,8 @@ main {
   transform: translateY(-6px);
 }
 
-.imgOver img {
+.imgOver img,
+.imgOver {
   width: 80px;
   border-radius: 5px 0px 0px 5px;
   position: absolute;
@@ -328,7 +333,6 @@ main {
   margin-top: 20px;
   width: 100%;
   overflow: hidden;
-  cursor: grab;
 }
 
 .arrows,
@@ -364,8 +368,7 @@ h3 {
   margin-right: 20px;
 }
 
-.section2,
-footer {
+.section2 {
   background-color: white;
   width: 100vw;
   margin-left: -150px;
@@ -414,7 +417,6 @@ strong {
   position: relative;
   overflow-x: scroll;
   gap: 4vw;
-  cursor: grab;
   scrollbar-width: none; /* Hides scrollbar in Firefox */
   overflow: -moz-scrollbars-none;
 }
@@ -470,9 +472,74 @@ strong {
 .scroll-button.right {
   right: 10px;
 }
+/* Responsive adjustments */
 @media screen and (max-width: 1350px) {
   .section3 {
-    overflow: scroll;
+    overflow-x: scroll;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    margin: 0 20px;
+  }
+  header {
+    padding: 20px;
+  }
+  .desktop-sections {
+    display: none;
+  }
+  .mobile-select {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  .deskLogo {
+    display: none;
+  }
+  .mobileLogo {
+    display: block;
+    /* width: 50%; */
+  }
+  nav {
+    display: none;
+  }
+  .boxes1 {
+    flex-direction: column;
+  }
+  .box1 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  .container {
+    display: flex;
+    overflow-x: scroll;
+  }
+  .sec1 {
+    flex-direction: row;
+    width: 100%;
+  }
+  .img1,
+  .img2 {
+    height: 232px;
+    width: 280px;
+  }
+  .text2 h2,
+  .text2 span {
+    font-size: 16px;
+  }
+  .box2 {
+    padding-bottom: 20px;
+  }
+  .contact-info {
+    padding: 20px;
+  }
+  .footer-section {
+    display: none;
+  }
+  .arrows,
+  .arrows2 {
+    display: none;
   }
 }
 
@@ -481,21 +548,79 @@ strong {
     margin: 0 20px;
   }
   header {
-    margin: 0px 20px;
+    padding: 20px;
   }
-  .mobileLogo {
-    display: block;
+  .desktop-sections {
+    display: none;
+  }
+  .mobile-select {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
   }
   .deskLogo {
     display: none;
   }
-  .boxes {
-    flex-direction: column;
+  .mobileLogo {
+    display: block;
+    width: 50%;
   }
   nav {
     display: none;
   }
-  .section3 {
-    overflow: scroll;
+  .boxes {
+    flex-direction: row;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  .contact-info {
+    padding: 20px;
+  }
+  .footer-section {
+    display: none;
+  }
+  .container {
+    width: 100%;
+  }
+  .section5 {
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .select-box {
+    padding: 8px;
+    font-size: 14px;
+  }
+  .section-content p {
+    font-size: 14px;
+  }
+  .contact-info h3,
+  .contact-info p {
+    font-size: 14px;
+  }
+  /* .boxes2 {
+    flex-direction: column;
+    gap: 20px;
+  } */
+  .card {
+    min-width: 100%;
+  }
+  .banner img {
+    max-height: 200px;
+  }
+  .overlay {
+    border-radius: 0;
+  }
+  .text {
+    gap: 5vh;
+    left: 5%;
+    max-width: 90%;
+  }
+  .text button {
+    max-width: 120px;
+    padding: 10px 16px;
+    font-size: 10px;
   }
 }
