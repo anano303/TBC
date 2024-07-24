@@ -481,6 +481,7 @@ strong {
 @media screen and (max-width: 1350px) {
   .section3 {
     overflow-x: scroll;
+    scrollbar-color: blue gray;
   }
 }
 
@@ -525,19 +526,27 @@ strong {
     scroll-behavior: smooth;
     display: flex;
     position: relative;
-    scrollbar-width: auto;
+    scrollbar-width: thin;
+    scrollbar-color: blue gray;
     -ms-overflow-style: auto;
   }
-  .boxes2::-webkit-scrollbar {
-    display: block; /* Hide scrollbar for WebKit browsers */
-  }
+
   .container {
     display: flex;
     overflow-x: scroll;
+    scrollbar-color: blue gray;
+  }
+  .card,
+  .box2 {
+    margin-bottom: 30px;
   }
   .sec1 {
     flex-direction: row;
     width: 100%;
+  }
+  .sec1,
+  .sec2 {
+    margin-bottom: 20px;
   }
   .img1,
   .img2 {
