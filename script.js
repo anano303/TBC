@@ -98,3 +98,38 @@ document.addEventListener("DOMContentLoaded", () => {
   setupScrollableSection(".boxes2", ".blue-line", ".prev", ".next", 35);
   setupScrollableSection(".section5", ".blue-line2", ".prev2", ".next2", 100);
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const names = document.querySelectorAll(".name");
+
+  names.forEach((name) => {
+    name.addEventListener("click", () => {
+      const parent = name.parentNode;
+      const arrow = name.querySelector(".logo");
+      const option = parent.querySelector(".option");
+
+      if (parent.classList.contains("active")) {
+        // If the section is already active, close it
+        parent.classList.remove("active");
+        arrow.classList.remove("rotate");
+        option.style.maxHeight = null;
+      } else {
+        // Close all other sections
+        names.forEach((n) => {
+          const otherParent = n.parentNode;
+          const otherArrow = n.querySelector(".logo");
+          const otherOption = otherParent.querySelector(".option");
+
+          otherParent.classList.remove("active");
+          otherArrow.classList.remove("rotate");
+          otherOption.style.maxHeight = null;
+        });
+
+        // Open the clicked section
+        parent.classList.add("active");
+        arrow.classList.add("rotate");
+        option.style.maxHeight = option.scrollHeight + "px";
+      }
+    });
+  });
+});

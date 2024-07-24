@@ -1,10 +1,14 @@
 /* Basic styling for footer and sections */
+/* Basic styling for footer and sections */
 footer {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
   background-color: white;
+  width: 100%; /* Ensure the footer takes full width */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  overflow-x: hidden;
 }
 .footerHead {
   padding: 30px 150px;
@@ -52,6 +56,47 @@ footer {
   background-color: #e4e2e2;
   height: 1px;
   margin-top: 40px;
+  width: 100%;
+}
+
+/* Rotate the arrow character */
+.rotate {
+  transform: rotate(90deg); /* Rotate by 90 degrees for the > character */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Name styling */
+.mobile-select .name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  width: 100%; /* Ensure it takes full width */
+  box-sizing: border-box; /* Include padding and border in width */
+}
+
+/* Arrow styling */
+.mobile-select .logo {
+  font-size: 20px; /* Adjust size of the > character */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Option styling */
+.mobile-select .option {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  padding: 0 10px;
+  background: #f9f9f9;
+  border-bottom: 1px solid #ccc;
+  width: 100%; /* Ensure it takes full width */
+  box-sizing: border-box; /* Include padding and border in width */
+}
+
+.mobile-select .active .option {
+  /* This is controlled by JavaScript, so no need for extra styles here */
 }
 
 /* Hide mobile select and show desktop sections on large screens */
@@ -68,6 +113,7 @@ footer {
     display: flex; /* Ensure all sections are displayed */
   }
 }
+
 @media (min-width: 1600px) {
   .desktop-sections {
     padding-right: 20%;
@@ -76,32 +122,28 @@ footer {
     padding-right: 10%;
   }
 }
+
 @media (min-width: 2000px) {
   .desktop-sections {
     padding-right: 20%;
   }
   .footerHead {
-    padding-right: 12%;
-  }
-}
-@media (min-width: 2000px) {
-  .desktop-sections {
-    padding-right: 20%;
-  }
-  .footerHead {
-    padding-right: 14%;
+    padding-right: 14%; /* Adjusted to 14% */
   }
 }
 
 /* Hide desktop sections and show mobile select on small screens */
 @media (max-width: 768px) {
-  footer {
+  .footerHead,
+  .footer-section3,
+  .mobile-select {
     padding: 20px;
   }
-
   .mobile-select {
     display: flex;
     flex-direction: column;
+    width: 100%; /* Ensure it takes full width */
+    box-sizing: border-box; /* Include padding and border in width */
   }
 
   .desktop-sections {
@@ -120,7 +162,12 @@ footer {
   .footer-section.active p {
     display: block; /* Show paragraphs when the section is active */
   }
-  .footerHead {
-    padding-right: 0px;
+  .footer-section3 {
+    font-size: 14px;
+  }
+
+  .last-div {
+    font-size: 14px;
+    flex-direction: column;
   }
 }

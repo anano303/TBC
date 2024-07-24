@@ -149,7 +149,7 @@ main {
   color: #fff;
   top: 20%;
   left: 8%;
-  gap: 7vh;
+  gap: 30px;
   max-width: 540px;
   z-index: 2;
 }
@@ -486,11 +486,18 @@ strong {
 }
 
 @media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
   main {
     margin: 0 20px;
+    overflow-x: hidden;
   }
   header {
     padding: 20px;
+  }
+  .banner img {
+    min-height: 230px;
   }
   .desktop-sections {
     display: none;
@@ -553,9 +560,15 @@ strong {
     height: 232px;
     width: 280px;
   }
-  .text2 h2,
+  .text h1,
+  .text span,
+  .text2 h1,
   .text2 span {
     font-size: 16px;
+  }
+  .text button {
+    max-width: 300px;
+    width: 100%;
   }
   .box2 {
     padding-bottom: 20px;
@@ -573,12 +586,10 @@ strong {
 }
 
 @media screen and (max-width: 600px) {
-  body {
-    margin: 0 20px;
-  }
   header {
     padding: 20px;
   }
+
   .desktop-sections {
     display: none;
   }
@@ -592,17 +603,11 @@ strong {
   }
   .mobileLogo {
     display: block;
-    width: 50%;
   }
   nav {
     display: none;
   }
-  .boxes {
-    flex-direction: row;
-    overflow-x: auto;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-  }
+
   .contact-info {
     padding: 20px;
   }
@@ -615,9 +620,18 @@ strong {
   .section5 {
     gap: 20px;
   }
+  .text {
+    gap: 20px;
+    left: 5%;
+    max-width: 90%;
+  }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 420px) {
+  .banner img {
+    min-height: 300px;
+  }
+
   .select-box {
     padding: 8px;
     font-size: 14px;
@@ -642,10 +656,12 @@ strong {
   .overlay {
     border-radius: 0;
   }
-  .text {
-    gap: 5vh;
-    left: 5%;
-    max-width: 90%;
+
+  .text h1,
+  .text span,
+  .text2 h1,
+  .text2 span {
+    font-size: 12px;
   }
   .text button {
     max-width: 120px;
