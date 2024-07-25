@@ -1,3 +1,4 @@
+//language switch
 document.querySelectorAll(".language-selector").forEach((selector) => {
   const languageSwitch = selector.querySelector("#language-switch");
   const defaultLanguage = selector.querySelector(".default-language");
@@ -6,7 +7,7 @@ document.querySelectorAll(".language-selector").forEach((selector) => {
     event.preventDefault();
 
     // Swap the languages
-    var temp = defaultLanguage.textContent;
+    let temp = defaultLanguage.textContent;
     defaultLanguage.textContent = languageSwitch.textContent;
     languageSwitch.textContent = temp;
 
@@ -22,6 +23,8 @@ document.querySelectorAll(".language-selector").forEach((selector) => {
     });
   });
 });
+
+//scroll
 
 function setupScrollableSection(
   containerSelector,
