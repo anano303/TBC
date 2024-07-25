@@ -4,9 +4,22 @@ document.querySelectorAll(".language-selector").forEach((selector) => {
 
   languageSwitch.addEventListener("click", function (event) {
     event.preventDefault();
+
+    // Swap the languages
     var temp = defaultLanguage.textContent;
     defaultLanguage.textContent = languageSwitch.textContent;
     languageSwitch.textContent = temp;
+
+    // Update all other selectors with the new language
+    document.querySelectorAll(".language-selector").forEach((otherSelector) => {
+      const otherDefaultLanguage =
+        otherSelector.querySelector(".default-language");
+      const otherLanguageSwitch =
+        otherSelector.querySelector("#language-switch");
+
+      otherDefaultLanguage.textContent = defaultLanguage.textContent;
+      otherLanguageSwitch.textContent = languageSwitch.textContent;
+    });
   });
 });
 
