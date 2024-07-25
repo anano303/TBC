@@ -4,6 +4,10 @@
 
 This project is a modern web application designed with a responsive layout and interactive features. It incorporates smooth scrolling containers, draggable elements, and various dynamic visual effects, optimized for both desktop and mobile devices.
 
+## Screenshot
+
+![Homepage Screenshot](image.png)
+
 ## Technologies Used
 
 - **HTML5**: Provides the structure and content of the web pages.
@@ -58,7 +62,9 @@ The project directory contains the following structure:
 │ └── TBCXBold.6db5e61d.woff2
 │
 ├── /images
-│ └── ![[alt image1](image-1.png) ![alt image2](image-3.png) ![alt image3](image-2.png)]
+│   ├── image1.png
+│   ├── image2.png
+│   └── image3.png
 ├── index.html
 ├── styles.css
 └── script.js
