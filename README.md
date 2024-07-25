@@ -48,7 +48,8 @@ open index.html
 
 The project directory contains the following structure:
 
-```bash
+```plaintext
+
 /project-root
 │
 ├── /Fonts
@@ -57,7 +58,7 @@ The project directory contains the following structure:
 │ └── TBCXBold.6db5e61d.woff2
 │
 ├── /images
-│ └── ![alt image1](image-1.png) ![alt image2](image-3.png) ![alt image3](image-2.png)]
+│ └── ![[alt image1](image-1.png) ![alt image2](image-3.png) ![alt image3](image-2.png)]
 ├── index.html
 ├── styles.css
 └── script.js
