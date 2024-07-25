@@ -273,6 +273,7 @@ main {
   transition: background-color 0.5s ease-in-out;
   flex: 0 0 300px;
   margin-right: 20px;
+  cursor: pointer;
 }
 .box2 .img-hover {
   position: relative;
@@ -442,6 +443,7 @@ strong {
   border-radius: 10px;
   padding: 20px 30px;
   min-width: 350px;
+  cursor: pointer;
 }
 
 .card img {
