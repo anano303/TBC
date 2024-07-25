@@ -1,13 +1,14 @@
-document
-  .getElementById("language-switch")
-  .addEventListener("click", function (event) {
+document.querySelectorAll(".language-selector").forEach((selector) => {
+  const languageSwitch = selector.querySelector("#language-switch");
+  const defaultLanguage = selector.querySelector(".default-language");
+
+  languageSwitch.addEventListener("click", function (event) {
     event.preventDefault();
-    var defaultLanguage = document.querySelector(".default-language");
-    var additionalLanguage = document.getElementById("language-switch");
     var temp = defaultLanguage.textContent;
-    defaultLanguage.textContent = additionalLanguage.textContent;
-    additionalLanguage.textContent = temp;
+    defaultLanguage.textContent = languageSwitch.textContent;
+    languageSwitch.textContent = temp;
   });
+});
 
 function setupScrollableSection(
   containerSelector,
