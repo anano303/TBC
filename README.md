@@ -39,15 +39,16 @@ To get started with this project, follow these steps:
 
 Open index.html in your web browser to view the project:
 
-bash
+```bash
+
 open index.html
+```
 
 ### Project Structure
 
 The project directory contains the following structure:
 
-bash
-Copy code
+```bash
 /project-root
 │
 ├── /Fonts
@@ -56,33 +57,31 @@ Copy code
 │ └── TBCXBold.6db5e61d.woff2
 │
 ├── /images
-│ ├── image-1.png
-│ ├── image-2.png
-│ └── image-3.png
-│
+│ └── ![alt image1](image-1.png) ![alt image2](image-3.png) ![alt image3](image-2.png)]
 ├── index.html
 ├── styles.css
 └── script.js
+```
 
-/Fonts: Contains custom font files.
-/images: Directory for image assets.
-index.html: Main HTML file.
-styles.css: Contains all the CSS styles.
-script.js: Contains JavaScript functionality for interactivity.
+- /Fonts: Contains custom font files.
+- /images: Directory for image assets.
+- index.html: Main HTML file.
+- styles.css: Contains all the CSS styles.
+- script.js: Contains JavaScript functionality for interactivity.
 
 ### Usage
 
-Desktop View: Includes a fixed header, interactive sections, and a footer.
-Mobile View: Features a responsive design with a collapsible menu and adjusted layouts.
+- Desktop View: Includes a fixed header, interactive sections, and a footer.
+- Mobile View: Features a responsive design with a collapsible menu and adjusted layouts.
 
 ### Contributing
 
-#### To contribute to this project
+To contribute to this project:
 
-Fork the repository on GitHub
-Create a new branch for your changes.
-Commit your changes and push them to your forked repository.
-Submit a pull request with a description of your changes.
+1. Fork the repository on GitHub
+2. Create a new branch for your changes.
+3. Commit your changes and push them to your forked repository.
+4. Submit a pull request with a description of your changes.
 
 ### License
 
