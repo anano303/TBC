@@ -23,9 +23,14 @@ function setupScrollableSection(
 
   if (!container || !line || !prevButton || !nextButton) return; // Early exit if any element is missing
 
-  const containerWidth = container.clientWidth;
-  const maxScrollLeft = container.scrollWidth - containerWidth;
-  const maxLinePosition = containerWidth - line.clientWidth;
+  function updateDimensions() {
+    containerWidth = container.clientWidth;
+    maxScrollLeft = container.scrollWidth - containerWidth;
+    maxLinePosition = containerWidth - line.clientWidth;
+  }
+
+  let containerWidth, maxScrollLeft, maxLinePosition;
+  updateDimensions();
 
   let isDragging = false;
   let startX, startScrollLeft, startTransform;
@@ -36,17 +41,16 @@ function setupScrollableSection(
   }
 
   function handleScroll(percentage) {
-    const scrollAmount = maxScrollLeft * (percentage / 100);
+    const scrollAmount = containerWidth * (percentage / 100);
     container.scrollBy({
       left: scrollAmount,
       behavior: "smooth",
     });
-    updateLine();
   }
 
   function onMouseMove(e) {
     if (!isDragging) return;
-    const dx = e.pageX - startX;
+    const dx = (e.pageX || e.touches[0].pageX) - startX;
     const newTransform = Math.min(
       Math.max(startTransform + dx, 0),
       maxLinePosition
@@ -59,6 +63,8 @@ function setupScrollableSection(
     isDragging = false;
     document.removeEventListener("mousemove", onMouseMove);
     document.removeEventListener("mouseup", onMouseUp);
+    document.removeEventListener("touchmove", onMouseMove);
+    document.removeEventListener("touchend", onMouseUp);
   }
 
   line.addEventListener("mousedown", (e) => {
@@ -72,6 +78,17 @@ function setupScrollableSection(
     document.addEventListener("mouseup", onMouseUp);
   });
 
+  line.addEventListener("touchstart", (e) => {
+    isDragging = true;
+    startX = e.touches[0].pageX;
+    startTransform =
+      parseFloat(
+        line.style.transform.replace("translateX(", "").replace("px)", "")
+      ) || 0;
+    document.addEventListener("touchmove", onMouseMove);
+    document.addEventListener("touchend", onMouseUp);
+  });
+
   prevButton.addEventListener("click", () => handleScroll(-movePercentage));
   nextButton.addEventListener("click", () => handleScroll(movePercentage));
 
@@ -80,18 +97,38 @@ function setupScrollableSection(
       isDragging = true;
       startX = e.pageX;
       startScrollLeft = container.scrollLeft;
-      function onMouseMove(e) {
-        if (!isDragging) return;
-        container.scrollLeft = startScrollLeft - (e.pageX - startX);
-        updateLine();
-      }
-      document.addEventListener("mousemove", onMouseMove);
-      document.addEventListener("mouseup", () => {
-        isDragging = false;
-        document.removeEventListener("mousemove", onMouseMove);
-      });
+
+      document.addEventListener("mousemove", onMouseMoveContainer);
+      document.addEventListener("mouseup", onMouseUpContainer);
     }
   });
+
+  container.addEventListener("touchstart", (e) => {
+    isDragging = true;
+    startX = e.touches[0].pageX;
+    startScrollLeft = container.scrollLeft;
+
+    document.addEventListener("touchmove", onMouseMoveContainer);
+    document.addEventListener("touchend", onMouseUpContainer);
+  });
+
+  function onMouseMoveContainer(e) {
+    if (!isDragging) return;
+    const pageX = e.pageX || e.touches[0].pageX;
+    container.scrollLeft = startScrollLeft - (pageX - startX);
+    updateLine();
+  }
+
+  function onMouseUpContainer() {
+    isDragging = false;
+    document.removeEventListener("mousemove", onMouseMoveContainer);
+    document.removeEventListener("mouseup", onMouseUpContainer);
+    document.removeEventListener("touchmove", onMouseMoveContainer);
+    document.removeEventListener("touchend", onMouseUpContainer);
+  }
+
+  container.addEventListener("scroll", updateLine);
+  window.addEventListener("resize", updateDimensions);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
