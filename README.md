@@ -16,8 +16,21 @@ This project is a modern web application designed with a responsive layout and i
   - **Flexbox**: For layout alignment and spacing.
   - **CSS Transitions**: For smooth hover and scroll effects.
 - **JavaScript**: Enhances interactivity with features like draggable lines and scroll buttons.
+
   - **Smooth Scrolling**: Implements smooth transitions for horizontal scrolling.
   - **Event Handling**: Manages user interactions with scroll buttons and draggable elements.
+  - **Accordion**:
+
+    - Enhances user interaction by toggling sections open and closed.
+    - Automatically closes other sections when a new section is opened.
+    - Smooth transition effects for the accordion's expand and collapse actions.
+    - **Mobile Navbar**:
+      - Provides a responsive navigation bar that adapts to mobile - screens.
+      - Smooth transition for opening and closing the mobile navigation menu.
+    - **Language Switch**:
+
+      - Implements a language switch feature that allows users to toggle between languages.
+      - Ensures all language selectors across the site update simultaneously for a consistent user experience.
 
 ## Getting Started
 
